@@ -1,0 +1,189 @@
+<html>
+<title>Simulation of the Vogler Analog Computer</title>
+<link rel="stylesheet" href="vogler.css"/>
+<script src="jquery.min.js" type="text/javascript"></script>
+<body>
+<div id="menue"><button id="demo">Demo</button>&emsp;<button id="help">Help</button>&emsp;</div>
+<br></br>
+<div id="screen"><canvas id="oscilloscope"></canvas></div>
+<div id="potinput">
+K1<input id="k1in" text=""></input>K2<input id="k2in" text=""></input><br></br>
+K3<input id="k3in" text=""></input>K4<input id="k4in" text=""></input><br></br>
+ </div>
+<div id="restpanel">
+ on/off <button id="onoff">-</button><br></br>
+ reset <button id="reset">-</button><br></br>
+ intgr. <button id="intmode">HOLD</button><br></br>
+ addr. <button id="aselect">K1</button><br></br>
+</div>
+<br></br>
+<div id="kpanel">
+<button id="k1y" class="multm">K1</button>
+<button id="k2y" class="multm">K2</button>
+<button id="k3y" class="multm">K3</button>
+<button id="k4y" class="multm">K4</button>
+<br></br>
+<button id="k1U" class="red">K1</button>
+<button id="k2U" class="red">K2</button>
+<button id="k3U" class="red">K3</button>
+<button id="k4U" class="red">K4</button>
+<br></br>
+<button id="k1D" class="red">K1</button>
+<button id="k2D" class="red">K2</button>
+<button id="k3D" class="red">K3</button>
+<button id="k4D" class="red">K4</button>
+<br></br>
+
+</div>
+<div id="panel">
+ 
+<button id="gndm1" class="blue">-1&nbsp;</button>
+<button id="gndm2" class="blue">-1</button>
+<button id="gnd">GN</button>
+<button id="gndp1" class="red">+1&nbsp;</button>
+<button id="gndp2" class="red">+1</button>
+
+<button id="k34" class="grey">KK</button>
+<button id="ext" class="grey">EX</button>
+<button id="vx" class="grey">/\/</button>
+
+<br></br>
+<button id="int1ic" class="ic">1C</button>
+<button id="int2ic" class="ic">1C</button>
+<button id="sum1p10" class="sump10">10</button>
+<button id="sum2p10" class="sump10">10</button>
+<button id="sum3p10" class="sump10">10</button>
+<button id="opiSP">SP</button>
+<button id="multX1" class="multm">X1</button>
+<button id="multZ1" class="multm">Z1</button>
+<br></br>
+<button id="int1p10" class="sump10">10</button>
+<button id="int2p10" class="sump10">10</button>
+<button id="sum1p1" class="multm">01</button>
+<button id="sum2p1" class="multm">01 </button>
+
+<button id="sum3p1" class="multm">01 </button>
+<button id="opip1" class="multm">01 </button>
+<button id="multY1" class="multm">Y1 </button>
+<button id="multZ2" class="multm">Z2 </button>
+<br></br>
+<button id="int1p1" class="multm">01 </button>
+<button id="int2p1" class="multm">01 </button>
+<button id="sum1pp1" class="multm">01</button>
+<button id="sum2pp1" class="multm">01 </button>
+<button id="sum3pp1" class="multm">01 </button>
+<button id="opipp1" class="multm">01 </button>
+
+<button id="multY2" class="multm">Y2 </button>
+<button id="sinp1" class="multm">SN</button>
+
+<br></br>
+<button id="int1U" class="red">IN</button>
+<button id="int2U" class="red">iN</button>
+
+<button id="sum1U" class="red">S1</button>
+<button id="sum2U" class="red">S2</button>
+<button id="sum3U" class="red">S3</button>
+
+<button id="opiU" class="red">OP</button>
+<button id="multU" class="red">Ml</button>
+<button id="sinU" class="red">SN</button>
+
+<br></br>
+<button id="int1D" class="red">IN</button>
+<button id="int2D" class="red">iN</button>
+
+<button id="sum1D" class="red">S1</button>
+<button id="sum2D" class="red">S2</button>
+<button id="sum3D" class="red">S3</button>
+
+<button id="opiD" class="red">OP</button>
+<button id="multD" class="red">Ml</button>
+<button id="sinD" class="red">SN</button>
+
+<br></br>
+
+</div>
+<script src="vogler.js"></script>
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+<div id="instructions">
+
+<h1>How To Use The Simulator</h1>
+
+I recommend to read Dr. Vogler's own description of his <a href="https://www.analogmuseum.org">analog computer</a>. 
+
+To the right is an area with four button just below the Demo and Help with four 
+buttons. They are name on/off , reset , intgr. and addr. . 
+
+The on/off - button turns the analog computer on and off. 
+The reset button resets it. The intgr. button has three different states 
+IC , HOLD and RUN. (more on the integrator section)
+The addr. is of special interests as it views the current value of the different 
+operations. 
+
+<h2>The K text input fields and Wiring</h2>
+
+On top in the middle are the text input fields which allow you to input four
+floating point values. Each text input field has a name like K1, K2, K3 or K4. 
+
+In order to use these values for operations like addition, multiplication etc. 
+you have to wire them with the operators. 
+
+On the left side below you see yellow and red buttons with a K and a number on
+them. Click on them and a greek letter and a number appears. On the right side 
+are the "operators" like summers for addition, integrators for integration, etc.
+
+After you have clicked on one of the K buttons and a greek letter appeared you
+should get the same greek letter and number combination appear on one of these
+buttons after you clicked them. In case it was not successful , undo it by clicking
+and try again. Usually it works then. 
+
+Connect two K buttons with a summer. Then turn on the simulator and switch to the 
+either S1, S2 or S3 by clicking on the already mentioned addr. button. You should
+get the sum with a false sign. So +1 and +2 should show -3. Accept this as an oddity
+of analog computers. 
+
+<h2>The Integrators</h2> 
+
+Remember the intgr. button. Usually integrators have three states. They have an 
+initial value or start value. In order to initial them the computer has to be on 
+and you have to set the intgr. button to IC. 
+The HOLD mode stops the integration. In RUN mode the initial value decreases by 
+a set value. 
+
+<h2>The Oscilloscope Mode</h2>
+
+Clicking once at the grey screen turn it into oscilloscope mode. It is now possible
+to get sinus curves , functions and diagramms displayed. It does not do more - probably
+less - than an oscilloscope. 
+
+<h2>What Is An Overload ? </h2>
+
+Usually capacitors are used in usual analog computers. Also they operate at limited
+voltages and values can not exceed a certain value. The highest value in this simulator
+is set to -18000 and +18000. 
+
+<h2>Unimplemented Buttons or Functions</h2> 
+
+Not everything of the original Vogler Analog Computer is implemented. The square root 
+and certain other buttons were left out or are not implemented but the majority of 
+it should work as intended by Doctor Vogler. 
+
+<h2>known Bugs</h2>
+
+Usually wiring and some minor other things do not quite work as expected or wanted. 
+Please feel free to correct them. 
+
+<h2>Want to Contribute to the Repo</h2>
+
+So you want to contribute to the <a href="https://github.com/MatthiasLiszt/vogleranalogcomputersimulator">github repo</a> , because you want to 
+see the ultimative analog computer simulator in the near future. Just click on <a href="https://github.com/MatthiasLiszt/vogleranalogcomputersimulator">github repo</a> then. 
+
+<br></br>
+<a href="#menue">Back to the Simulator</a>
+</div>
+</body>
+</html>

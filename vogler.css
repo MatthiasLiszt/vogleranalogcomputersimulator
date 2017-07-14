@@ -1,0 +1,124 @@
+body{
+ background-color: lightgreen;
+}
+
+#menue{
+ float: right;
+}
+
+#help{
+ border: none;
+ background-color: lightgreen;
+ color: blue;
+}
+
+#load{
+ border: none;
+ background-color: lightgreen;
+ color: blue;
+}
+
+#save{
+ border: none;
+ background-color: lightgreen;
+ color: blue;
+}
+
+#demo{
+ border: none;
+ background-color: lightgreen;
+ color: blue;
+}
+
+
+#oscilloscope{
+ background-color: grey;
+ border-style: solid;
+ border-width: 11px;
+ float: left;
+}
+
+#panel{
+ width: 380px;
+ height: 320px;
+ padding: 11px;
+ background-color: green;
+ border-style: solid;
+ border-width: 11px;
+ float: left;
+}
+
+#kpanel{
+ width: 200px;
+ height: 160px;
+ padding: 11px;
+ background-color: green;
+ border-style: solid;
+ border-width: 11px;
+ float: left;
+}
+
+#potinput{
+ border-style: solid;
+ border-width: 11px;
+ float: left;
+}
+
+#restpanel{
+ border-style: solid;
+ border-width: 11px;
+ background-color: green;
+ float: left;
+}
+
+
+
+#screen{ 
+ width: 320px;
+ height: 200px;
+ background-color: green;
+ float: left;
+}
+
+.ic{
+background-color: grey;
+}
+
+.sump10{
+background-color: lightgreen;
+}
+
+#gnd{
+ background-color: black;
+ color: white;
+}
+
+#opiSP{
+ background-color: black;
+ color: white;
+}
+
+.multm{
+ background-color: yellow;
+}
+
+.red{
+ background-color: red;
+}
+
+.grey{
+ background-color: grey;
+}
+
+
+.blue{
+ background-color: blue;
+ color: white;
+}
+
+h1{color: black;
+}
+
+#instructions{
+ color: black;
+}
